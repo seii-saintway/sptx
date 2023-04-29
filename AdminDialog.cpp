@@ -35,7 +35,7 @@ void CAdminDialog::OnOK()
 	if ( m_strPassword == "123456" )
 		CDialog::OnOK();
 	else
-		MessageBox( _T("ÃÜÂë´íÎó£¬ÇëÖØĞÂÊäÈë£¡") );
+		MessageBox( _T("å¯†ç é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼") );
 }
 
 void CAdminDialog::DoDataExchange(CDataExchange* pDX)

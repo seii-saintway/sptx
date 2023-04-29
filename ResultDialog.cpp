@@ -27,10 +27,10 @@ CResultDialog::CResultDialog()
 	m_brush.CreateSolidBrush(RGB(127, 127, 127));
 	m_brushOriginal.CreateSolidBrush(RGB(240, 240, 240));
 
-	m_font.CreatePointFont(100, _T("ËÎÌå"));
-	m_fontLG.CreatePointFont(400, _T("ËÎÌå"));
-	m_fontNM.CreatePointFont(300, _T("ËÎÌå"));
-	m_fontBold.CreatePointFont(100, _T("Î¢ÈíÑÅºÚ"));
+	m_font.CreatePointFont(100, _T("å®‹ä½“"));
+	m_fontLG.CreatePointFont(400, _T("å®‹ä½“"));
+	m_fontNM.CreatePointFont(300, _T("å®‹ä½“"));
+	m_fontBold.CreatePointFont(100, _T("å¾®è½¯é›…é»‘"));
 }
 
 CResultDialog::~CResultDialog()
@@ -82,7 +82,7 @@ BOOL CResultDialog::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	// TODO:  ÔÚ´ËÌí¼Ó¶îÍâµÄ³õÊ¼»¯
+	// TODO:  åœ¨æ­¤æ·»åŠ é¢å¤–çš„åˆå§‹åŒ–
 	SetLayeredWindowAttributes(RGB(127, 127, 127), 0, 0x1);
 
 	CDataExchange dx( this, FALSE );
@@ -96,7 +96,7 @@ BOOL CResultDialog::OnInitDialog()
 	m_prgsRight.SetPos(0);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-	// Òì³£: OCX ÊôÐÔÒ³Ó¦·µ»Ø FALSE
+	// å¼‚å¸¸: OCX å±žæ€§é¡µåº”è¿”å›ž FALSE
 }
 
 void CResultDialog::DoDataExchange(CDataExchange * pDX)
@@ -158,15 +158,15 @@ void CResultDialog::DrawRoundRect(CPaintDC * pDC, CWnd * pWnd, COLORREF crBackgr
 void CResultDialog::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
-	// TODO: ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
 	DrawRoundRect(&dc, GetDlgItem(IDC_GROUP_LEFT), RGB(240, 240, 240));
 	DrawRoundRect(&dc, GetDlgItem(IDC_GROUP_RIGHT), RGB(240, 240, 240));
-	// ²»Îª»æÍ¼ÏûÏ¢µ÷ÓÃ CDialog::OnPaint()
+	// ä¸ä¸ºç»˜å›¾æ¶ˆæ¯è°ƒç”¨ CDialog::OnPaint()
 }
 
 HBRUSH CResultDialog::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 {
-	// TODO:  ÔÚ´Ë¸ü¸Ä DC µÄÈÎºÎÌØÐÔ
+	// TODO:  åœ¨æ­¤æ›´æ”¹ DC çš„ä»»ä½•ç‰¹æ€§
 	pDC->SetBkMode(TRANSPARENT);
 	if (nCtlColor == CTLCOLOR_STATIC)
 	{
@@ -192,7 +192,7 @@ HBRUSH CResultDialog::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 		pDC->SelectObject(&m_fontBold);
 		break;
 	}
-	// TODO:  Èç¹ûÄ¬ÈÏµÄ²»ÊÇËùÐè»­±Ê£¬Ôò·µ»ØÁíÒ»¸ö»­±Ê
+	// TODO:  å¦‚æžœé»˜è®¤çš„ä¸æ˜¯æ‰€éœ€ç”»ç¬”ï¼Œåˆ™è¿”å›žå¦ä¸€ä¸ªç”»ç¬”
 	switch (pWnd->GetDlgCtrlID()) {
 	case IDC_MAX_MM:
 	case IDC_RUN_TIME:
@@ -216,7 +216,7 @@ HBRUSH CResultDialog::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 
 void CResultDialog::OnBnClickedRadio()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼þÍ¨Öª´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æŽ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CDataExchange dx( this, TRUE );
 	DDX_Radio( &dx, IDC_RADIO0, pDoc->m_nLevel );
 

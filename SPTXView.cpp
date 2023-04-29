@@ -64,7 +64,7 @@ BOOL CSPTXView::PreCreateWindow(CREATESTRUCT& cs)
 {
 	if ( !CView::PreCreateWindow(cs) ) return FALSE;
 
-	// TODO:  ÔÚ´ËÌí¼Ó×¨ÓÃ´úÂëºÍ/»òµ÷ÓÃ»ùÀà
+	// TODO:  åœ¨æ­¤æ·»åŠ ä¸“ç”¨ä»£ç å’Œ/æˆ–è°ƒç”¨åŸºç±»
 	WNDCLASS wndcls;
 	::GetClassInfo(AfxGetInstanceHandle(), cs.lpszClass, &wndcls);
 	wndcls.style |= CS_OWNDC;
@@ -182,10 +182,10 @@ int CSPTXView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CView::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	// TODO:  ÔÚ´ËÌí¼ÓÄú×¨ÓÃµÄ´´½¨´úÂë
+	// TODO:  åœ¨æ­¤æ·»åŠ æ‚¨ä¸“ç”¨çš„åˆ›å»ºä»£ç 
 	CDC* pDC = GetDC();
 
-	m_dcMemory.CreateCompatibleDC( pDC ); // ´´½¨ÓëÏÔÊ¾DCÏà¼æÈÝµÄÄÚ´æDC
+	m_dcMemory.CreateCompatibleDC( pDC ); // åˆ›å»ºä¸Žæ˜¾ç¤ºDCç›¸å…¼å®¹çš„å†…å­˜DC
 	m_bm.CreateCompatibleBitmap( pDC, WIDTH * 3, HEIGHT * 3 );
 	m_dcMemory.SelectObject( &m_bm );
 
@@ -198,7 +198,7 @@ void CSPTXView::OnInitialUpdate()
 {
 	CView::OnInitialUpdate();
 
-	// TODO: ÔÚ´ËÌí¼Ó×¨ÓÃ´úÂëºÍ/»òµ÷ÓÃ»ùÀà
+	// TODO: åœ¨æ­¤æ·»åŠ ä¸“ç”¨ä»£ç å’Œ/æˆ–è°ƒç”¨åŸºç±»
 	CDC* pDC = GetDC();
 
 	pDC->SetMapMode( MM_ISOTROPIC );
@@ -212,7 +212,7 @@ void CSPTXView::OnInitialUpdate()
 
 void CSPTXView::OnDestroy()
 {
-	// TODO: ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
 	CDC* pDC = GetDC();
 	pDoc->m_ptOrg = CPoint(m_nWidth / 2, m_nHeight * 3 / 4);
 	pDC->DPtoLP( &(pDoc->m_ptOrg) );
@@ -227,7 +227,7 @@ void CSPTXView::OnSize(UINT nType, int cx, int cy)
 {
 	CView::OnSize(nType, cx, cy);
 
-	// TODO:  ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂë
+	// TODO:  åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
 	CDC* pDC = GetDC();
 	
 	CPoint pt(m_nWidth / 2, m_nHeight * 3 / 4);
@@ -246,7 +246,7 @@ void CSPTXView::OnSize(UINT nType, int cx, int cy)
 
 BOOL CSPTXView::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
 {
-	// TODO:  ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO:  åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	CDC* pDC = GetDC();
 
 	CPoint point(pt);
@@ -268,7 +268,7 @@ BOOL CSPTXView::OnMouseWheel(UINT nFlags, short zDelta, CPoint pt)
 
 void CSPTXView::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	if ( pDoc->m_bBoxing ) {
 		if ( !m_bDrawing ) {
 			m_bDrawing = TRUE;
@@ -317,7 +317,7 @@ void CSPTXView::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CSPTXView::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	if ( pDoc->m_bBoxing ) {
 		pDoc->m_bBoxing = FALSE;
 		if ( m_bDrawing ) {
@@ -361,7 +361,7 @@ void CSPTXView::OnLButtonUp(UINT nFlags, CPoint point)
 
 void CSPTXView::OnMouseMove(UINT nFlags, CPoint point)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	if ( pDoc->m_bBoxing ) {
 		if ( m_bDrawing ) {
 			CDC* pDC = GetDC();

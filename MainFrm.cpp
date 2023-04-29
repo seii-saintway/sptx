@@ -258,7 +258,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
 {
-	// TODO: ÔÚ´ËÌí¼Ó×¨ÓÃ´úÂëºÍ/»òµ÷ÓÃ»ùÀà
+	// TODO: åœ¨æ­¤æ·»åŠ ä¸“ç”¨ä»£ç å’Œ/æˆ–è°ƒç”¨åŸºç±»
 	if (CFrameWnd::OnCreateClient(lpcs, pContext) == NULL) return FALSE;
 
 	m_wndResultDialog.Create(CResultDialog::IDD, this);
@@ -302,7 +302,7 @@ void CMainFrame::OnShowWindow(BOOL bShow, UINT nStatus)
 {
 	CFrameWnd::OnShowWindow(bShow, nStatus);
 
-	// TODO: ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
 	m_wndResultDialog.UpdateData(FALSE);
 	m_wndResultDialog.ShowWindow(SW_SHOW);
 }
@@ -311,7 +311,7 @@ void CMainFrame::OnWindowPosChanged(WINDOWPOS* lpwndpos)
 {
 	CFrameWnd::OnWindowPosChanged(lpwndpos);
 
-	// TODO: ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
 	if (GetActiveView() == NULL) return;
 	if (m_wndResultDialog.GetSafeHwnd() == NULL) return;
 
@@ -320,7 +320,7 @@ void CMainFrame::OnWindowPosChanged(WINDOWPOS* lpwndpos)
 	GetActiveView()->ClientToScreen(&rtCapture);
 	m_wndResultDialog.GetClientRect(&rtResult);
 
-	// ÒÆ¶¯ÆÁÄ»
+	// ç§»åŠ¨å±å¹•
 	m_wndResultDialog.MoveWindow(
 		(rtCapture.left + rtCapture.right) / 2 - rtResult.Width() / 2,
 		rtCapture.top, rtResult.Width(), rtResult.Height()
@@ -329,13 +329,13 @@ void CMainFrame::OnWindowPosChanged(WINDOWPOS* lpwndpos)
 
 void CMainFrame::OnAperture()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	pDoc->m_bBoxing = TRUE;
 }
 
 void CMainFrame::OnConfiguration()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	m_wndConfigDialog.UpdateData(FALSE);
 	m_wndConfigDialog.ShowWindow(SW_SHOW);
 	pDoc->m_bLining = TRUE;
@@ -343,19 +343,19 @@ void CMainFrame::OnConfiguration()
 
 void CMainFrame::OnManu()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	m_wndManuDialog.ShowWindow(SW_SHOW);
 }
 
 void CMainFrame::OnAuto()
 {
-	// TODO: ÔÚ´ËÌí¼ÓÃüÁî´¦Àí³ÌÐò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ å‘½ä»¤å¤„ç†ç¨‹åºä»£ç 
 	m_wndAutoDialog.ShowWindow(SW_SHOW);
 }
 
 void CMainFrame::OnTimer(UINT_PTR nIDEvent)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌÐò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 	switch ( nIDEvent ) {
 	case 1:
 		{

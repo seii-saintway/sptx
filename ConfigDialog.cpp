@@ -49,7 +49,7 @@ void CConfigDialog::Revise() {
 	m_fUnit = uMM / fPixel;
 
 	CString strUnit;
-	strUnit.Format( _T("1 ÏóËØ = %.3f ºÁÃ×"), m_fUnit );
+	strUnit.Format( _T("1 è±¡ç´  = %.3f æ¯«ç±³"), m_fUnit );
 	DDX_Text(&dx, IDC_UNIT_EDIT, strUnit);
 
 	OnEnKillfocusMmEdit();
@@ -72,7 +72,7 @@ FLOAT CConfigDialog::ShowTextBox()
 
 void CConfigDialog::OnCancel()
 {
-	// TODO: ÔÚ´ËÌí¼Ó×¨ÓÃ´úÂëºÍ/»òµ÷ÓÃ»ùÀà
+	// TODO: åœ¨æ­¤æ·»åŠ ä¸“ç”¨ä»£ç å’Œ/æˆ–è°ƒç”¨åŸºç±»
 	pDoc->m_bLining = FALSE;
 
 	CDialog::OnCancel();
@@ -90,7 +90,7 @@ void CConfigDialog::DoDataExchange(CDataExchange* pDX)
 		m_ptStart = pDoc->m_ptStart;
 		m_ptEnd = pDoc->m_ptEnd;
 
-		strUnit.Format( _T("1 ÏóËØ = %.3f ºÁÃ×"), m_fUnit );
+		strUnit.Format( _T("1 è±¡ç´  = %.3f æ¯«ç±³"), m_fUnit );
 		fPixel = pDoc->m_arrMM[pDoc->m_nLevel] / m_fUnit;
 	}
 
@@ -161,10 +161,10 @@ HBRUSH CConfigDialog::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
 
 	if (pWnd->GetDlgCtrlID() == IDC_UNIT_PIXEL_EDIT) {
-		// TODO:  ÔÚ´Ë¸ü¸Ä DC µÄÈÎºÎÊôĞÔ
+		// TODO:  åœ¨æ­¤æ›´æ”¹ DC çš„ä»»ä½•å±æ€§
 		pDC->SetBkMode(TRANSPARENT);
 		pDC->SetBkColor(RGB(255, 255, 255));
-		// TODO:  Èç¹ûÄ¬ÈÏµÄ²»ÊÇËùĞè»­±Ê£¬Ôò·µ»ØÁíÒ»¸ö»­±Ê
+		// TODO:  å¦‚æœé»˜è®¤çš„ä¸æ˜¯æ‰€éœ€ç”»ç¬”ï¼Œåˆ™è¿”å›å¦ä¸€ä¸ªç”»ç¬”
 		return m_brush;
 	}
 
@@ -175,13 +175,13 @@ void CConfigDialog::OnShowWindow(BOOL bShow, UINT nStatus)
 {
 	CDialog::OnShowWindow(bShow, nStatus);
 
-	// TODO: ÔÚ´Ë´¦Ìí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤å¤„æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç 
 	ShowTextBox();
 }
 
 void CConfigDialog::OnBnClickedRadio()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	FLOAT fMM = ShowTextBox();
 	FLOAT fPixel = fMM / m_fUnit;
 	CDataExchange dx(this, FALSE);
@@ -190,7 +190,7 @@ void CConfigDialog::OnBnClickedRadio()
 
 void CConfigDialog::OnEnKillfocusMmEdit()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	FLOAT fMM = ShowTextBox();
 	FLOAT fPixel = fMM / m_fUnit;
 	CDataExchange dx(this, FALSE);
@@ -199,7 +199,7 @@ void CConfigDialog::OnEnKillfocusMmEdit()
 
 void CConfigDialog::OnEnKillfocusUnitMmEdit()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CDataExchange dx(this, TRUE);
 
 	UINT uMM;
@@ -213,7 +213,7 @@ void CConfigDialog::OnEnKillfocusUnitMmEdit()
 	dx.m_bSaveAndValidate = FALSE;
 
 	CString strUnit;
-	strUnit.Format( _T("1 ÏóËØ = %.3f ºÁÃ×"), m_fUnit );
+	strUnit.Format( _T("1 è±¡ç´  = %.3f æ¯«ç±³"), m_fUnit );
 	DDX_Text(&dx, IDC_UNIT_EDIT, strUnit);
 
 	OnEnKillfocusMmEdit();
@@ -221,7 +221,7 @@ void CConfigDialog::OnEnKillfocusUnitMmEdit()
 
 void CConfigDialog::OnBnClickedSetButton()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CAdminDialog wndAdminDialog;
 	if ( wndAdminDialog.DoModal() == IDOK ) {
 		UpdateData(TRUE);
